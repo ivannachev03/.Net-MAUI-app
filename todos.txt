@@ -1,0 +1,10 @@
+1. Login/SignUp page for user authentication - DONE
+ 
+ВАЖНО!!!
+ЗА ДА СЕ РЕГИСТРИРАШ ИЛИ ЛОГНЕШ ИМАЙ ПРЕДВИД СЛЕДНИТЕ ВАЛИДАТОРИ:
+    // Only letters, numbers, 3 to 20 characters for username
+    // Valid email
+    // At least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character for password
+
+REFER TO Utils/Validators.cs 
+
