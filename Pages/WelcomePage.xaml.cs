@@ -11,4 +11,9 @@ public partial class WelcomePage : ContentPage
     {
         await Navigation.PopToRootAsync();
     }
+
+    private void AddButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AddVehicle());
+    }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMU_APP.Pages.AddVehicle"
+             Title="AddVehicle">
+    
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+
+                <Label Text="Brand" FontAttributes="Bold"/>
+                <Picker x:Name="BrandPicker" Title="Select a brand">
+                    <Picker.Items>
+                        <x:String>Toyota</x:String>
+                        <x:String>Ford</x:String>
+                        <x:String>BMW</x:String>
+                        <x:String>Honda</x:String>
+                        <x:String>Chevrolet</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Model" FontAttributes="Bold"/>
+                <Entry x:Name="ModelEntry" Placeholder="Enter model" />
+
+                <Label Text="Price" FontAttributes="Bold"/>
+                <Entry x:Name="PriceEntry" Placeholder="Enter price" Keyboard="Numeric" />
+
+                <Label Text="Information" FontAttributes="Bold"/>
+                <Editor x:Name="InfoEditor" Placeholder="Enter additional info" HeightRequest="100"/>
+                
+                
+                <Label Text="Car Photo" FontAttributes="Bold" />
+                
+                <Image x:Name="CarImage" HeightRequest="200" WidthRequest="200" Aspect="AspectFill" BackgroundColor="LightGray"/>
+                <Button Text="Choose Photo" Clicked="OnChoosePhotoClicked" />
+                <Button Text="Submit" Clicked="OnSubmitClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    
+</ContentPage>

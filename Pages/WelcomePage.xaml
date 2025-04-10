@@ -21,6 +21,9 @@
                     TextColor="White"
                     WidthRequest="120"
                     HorizontalOptions="Center"/>
+
+            <Button Text="Add Vehicle"
+                    Clicked="AddButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
