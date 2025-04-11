@@ -1,11 +1,51 @@
+using System.Collections.ObjectModel;
+using System.Timers;
+
+
 namespace PMU_APP.Pages;
 
 public partial class WelcomePage : ContentPage
 {
-	public WelcomePage()
+    private System.Timers.Timer _carouselTimer;
+    private int _currentIndex = 0;
+
+    public ObservableCollection<string> Images { get; set; }
+    public WelcomePage()
 	{
 		InitializeComponent();
-	}
+        Images = new ObservableCollection<string>
+        {
+            "logo.png",
+            "dotnet_bot.png",
+            "app.jpg"
+
+
+        };
+
+        BindingContext = this;
+
+        StartCarouselTimer();
+    }
+
+    private void StartCarouselTimer()
+    {
+        _carouselTimer = new System.Timers.Timer(3000);
+        _carouselTimer.Elapsed += OnTimerElapsed;
+        _carouselTimer.AutoReset = true;
+        _carouselTimer.Enabled = true;
+    }
+
+    private void OnTimerElapsed(object sender, ElapsedEventArgs e)
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            if (Images.Count == 0) return;
+
+            _currentIndex = (_currentIndex + 1) % Images.Count;
+            ImageCarousel.Position = _currentIndex;
+        });
+    }
+	
 
     private async void OnLogoutClicked(object sender, EventArgs e)
     {

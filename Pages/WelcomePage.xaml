@@ -5,10 +5,26 @@
              Title="Welcome">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+            <CarouselView x:Name="ImageCarousel"
+                  ItemsSource="{Binding Images}"
+                  Loop="True"
+                  IsBounceEnabled="True"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="FillAndExpand"
+                  HeightRequest="300">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding}" Aspect="AspectFill" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        
+        
             <Label Text="🎉 Welcome!" 
                    FontSize="32"
                    TextColor="DarkGreen"
                    HorizontalOptions="Center" />
+            
 
             <Label Text="You are successfully logged in." 
                    FontSize="18"
