@@ -2,13 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PMU_APP.Pages.AddVehicle"
-             Title="AddVehicle">
-    
-        <ScrollView>
-            <VerticalStackLayout Padding="20" Spacing="15">
+             Title="AddVehicle"
+             BackgroundColor="#F5F5F5">
 
-                <Label Text="Brand" FontAttributes="Bold"/>
-                <Picker x:Name="BrandPicker" Title="Select a brand">
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- Brand Picker -->
+            <Label Text="Brand" FontAttributes="Bold" TextColor="#333" />
+            <Frame BackgroundColor="White" CornerRadius="8" HasShadow="False" Padding="5">
+                <Picker x:Name="BrandPicker" Title="Select a brand"
+                        TitleColor="#888" TextColor="Black">
                     <Picker.Items>
                         <x:String>Toyota</x:String>
                         <x:String>Ford</x:String>
@@ -17,24 +21,58 @@
                         <x:String>Chevrolet</x:String>
                     </Picker.Items>
                 </Picker>
+            </Frame>
 
-                <Label Text="Model" FontAttributes="Bold"/>
-                <Entry x:Name="ModelEntry" Placeholder="Enter model" />
+            <!-- Model Entry -->
+            <Label Text="Model" FontAttributes="Bold" TextColor="#333"/>
+            <Frame BackgroundColor="White" CornerRadius="8" HasShadow="False" Padding="5">
+                <Entry x:Name="ModelEntry" Placeholder="Enter model" FontSize="16" TextColor="Black"/>
+            </Frame>
 
-                <Label Text="Price" FontAttributes="Bold"/>
-                <Entry x:Name="PriceEntry" Placeholder="Enter price" Keyboard="Numeric" />
+            <!-- Price Entry -->
+            <Label Text="Price" FontAttributes="Bold" TextColor="#333"/>
+            <Frame BackgroundColor="White" CornerRadius="8" HasShadow="False" Padding="5">
+                <Entry x:Name="PriceEntry" Placeholder="Enter price" Keyboard="Numeric" FontSize="16" TextColor="Black"/>
+            </Frame>
 
-                <Label Text="Information" FontAttributes="Bold"/>
-                <Editor x:Name="InfoEditor" Placeholder="Enter additional info" HeightRequest="100"/>
-                
-                
-                <Label Text="Car Photo" FontAttributes="Bold" />
-                
-                <Image x:Name="CarImage" HeightRequest="200" WidthRequest="200" Aspect="AspectFill" BackgroundColor="LightGray"/>
-                <Button Text="Choose Photo" Clicked="OnChoosePhotoClicked" />
-                <Button Text="Submit" Clicked="OnSubmitClicked"/>
-            </VerticalStackLayout>
-        </ScrollView>
+            <!-- Information -->
+            <Label Text="Information" FontAttributes="Bold" TextColor="#333"/>
+            <Frame BackgroundColor="White" CornerRadius="8" HasShadow="False" Padding="5">
+                <Editor x:Name="InfoEditor" Placeholder="Enter additional info"
+                        HeightRequest="100" FontSize="14" TextColor="Black"/>
+            </Frame>
 
-    
+            <!-- Image Preview -->
+            <Label Text="Car Photo" FontAttributes="Bold" TextColor="#333"/>
+            <Frame Padding="0" HasShadow="True" CornerRadius="10" BorderColor="#ccc" BackgroundColor="#E0E0E0">
+                <Image x:Name="CarImage"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       Aspect="AspectFill"
+                       BackgroundColor="LightGray"/>
+            </Frame>
+
+            <!-- Photo Button -->
+            <Button Text="Choose Photo"
+                    Clicked="OnChoosePhotoClicked"
+                    BackgroundColor="#333"
+                    TextColor="White"
+                    BorderColor="#555"
+                    BorderWidth="1"
+                    CornerRadius="8"
+                    Padding="12,8"
+                    FontAttributes="Bold"/>
+
+            <!-- Submit Button -->
+            <Button Text="Submit"
+                    Clicked="OnSubmitClicked"
+                    BackgroundColor="#1C1C1E"
+                    TextColor="White"
+                    BorderColor="#555"
+                    BorderWidth="1"
+                    CornerRadius="8"
+                    Padding="12,8"
+                    FontAttributes="Bold"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

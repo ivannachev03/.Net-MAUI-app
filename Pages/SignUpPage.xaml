@@ -2,12 +2,67 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PMU_APP.Pages.SignUpPage"
-             Title="Sign Up">
-    <StackLayout Padding="30" Spacing="15">
-        <Entry x:Name="UsernameEntry" Placeholder="Username" />
-        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
-        <Entry x:Name="EmailEntry" Placeholder="Email" />
-        <Button Text="Sign Up" Clicked="OnSignUpClicked"/>
-        <Label x:Name="StatusLabel" TextColor="Red"/>
-    </StackLayout>
+             Title="Sign Up"
+             BackgroundColor="#F5F5F5"
+             Padding="30">
+
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="25">
+
+            <!-- Logo -->
+            <Image Source="logo.png"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,10"/>
+
+            <!-- Heading -->
+            <Label Text="Create Account ✨"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+
+            <!-- Email Entry -->
+            <Frame Padding="10" CornerRadius="8" HasShadow="False" BackgroundColor="White">
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Email Address"
+                       Keyboard="Email"
+                       FontSize="16"
+                       TextColor="Black"/>
+            </Frame>
+
+            <!-- Username Entry -->
+            <Frame Padding="10" CornerRadius="8" HasShadow="False" BackgroundColor="White">
+                <Entry x:Name="UsernameEntry"
+                       Placeholder="Username"
+                       FontSize="16"
+                       TextColor="Black"/>
+            </Frame>
+
+            <!-- Password Entry -->
+            <Frame Padding="10" CornerRadius="8" HasShadow="False" BackgroundColor="White">
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Password"
+                       IsPassword="True"
+                       FontSize="16"
+                       TextColor="Black"/>
+            </Frame>
+
+            <!-- Sign Up Button -->
+            <Button Text="Sign Up"
+                    Clicked="OnSignUpClicked"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HeightRequest="45"/>
+
+            <!-- Status Label -->
+            <Label x:Name="StatusLabel"
+                   TextColor="Crimson"
+                   FontSize="14"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -2,28 +2,76 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PMU_APP.Pages.CarListPage"
-             Title="Car List">
+             Title="Car List"
+             BackgroundColor="#F5F5F5">
+
     <RefreshView>
         <CollectionView x:Name="CarsCollectionView"
                         SelectionMode="Single"
-                        SelectionChanged="OnCarSelected">
+                        SelectionChanged="OnCarSelected"
+                        Margin="10">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10">
-                        <Frame HeightRequest="100" Padding="0" HasShadow="True">
-                            <Grid ColumnDefinitions="100, *">
-                                <Image Source="{Binding ImagePath}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="100"
-                                       WidthRequest="100"/>
-                                <StackLayout Grid.Column="1" Padding="10">
-                                    <Label Text="{Binding Brand}" FontSize="16" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Model}" FontSize="14"/>
-                                    <Label Text="{Binding Price}" FontSize="14" TextColor="Green"/>
-                                </StackLayout>
-                            </Grid>
-                        </Frame>
-                    </Grid>
+                    <Frame HeightRequest="120"
+                           CornerRadius="12"
+                           Margin="5,10"
+                           HasShadow="True"
+                           BorderColor="#DDDDDD"
+                           BackgroundColor="White"
+                           Padding="10">
+                        <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto" ColumnSpacing="10" VerticalOptions="Center">
+                            <!-- Car Image -->
+                            <Image Grid.Column="0"
+                                   Source="{Binding ImagePath}"
+                                   HeightRequest="100"
+                                   WidthRequest="100"
+                                   Aspect="AspectFill" />
+
+                            <!-- Car Info (Brand, Model, Price) -->
+                            <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                                <Label Text="{Binding Brand}"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="#222" />
+                                <Label Text="{Binding Model}"
+                                       FontSize="14"
+                                       TextColor="#444" />
+                                <Label Text="{Binding Price}"
+                                       FontSize="14"
+                                       TextColor="DarkGreen" />
+                            </StackLayout>
+
+                            <!-- Action Buttons (Edit, Delete) -->
+                            <StackLayout Grid.Column="2"
+                                         Orientation="Vertical"
+                                         HorizontalOptions="End"
+                                         VerticalOptions="Center"
+                                         Spacing="6">
+
+                                <!-- Edit Button -->
+                                <Button Text="Edit"
+                                        Clicked="EditButton_Clicked"
+                                        BackgroundColor="#D3D3D3"
+                                        TextColor="#333"
+                                        CornerRadius="6"
+                                        WidthRequest="70"
+                                        FontSize="13"
+                                        BindingContext="{Binding .}"
+                                         />
+
+                                <!-- Delete Button -->
+                                <Button Text="Delete"
+                                        Clicked="OnDeleteClicked"
+                                        BackgroundColor="#B00020"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        WidthRequest="70"
+                                        FontSize="13"
+                                        FontAttributes="Bold"
+                                        BindingContext="{Binding .}" />
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

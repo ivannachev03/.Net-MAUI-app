@@ -1,4 +1,7 @@
 using PMU_APP.Models;
+using System.Diagnostics;
+using PMU_APP.Models;
+using PMU_APP.Services;
 
 namespace PMU_APP.Pages;
 
@@ -8,5 +11,7 @@ public partial class CarDetailPage : ContentPage
     {
         InitializeComponent();
         BindingContext = car;
+        
     }
+
 }

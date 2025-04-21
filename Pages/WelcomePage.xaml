@@ -2,48 +2,84 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PMU_APP.Pages.WelcomePage"
-             Title="Welcome">
+             Title="Welcome"
+             BackgroundColor="#F5F5F5"
+             Padding="20">
+
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
-            <CarouselView x:Name="ImageCarousel"
-                  ItemsSource="{Binding Images}"
-                  Loop="True"
-                  IsBounceEnabled="True"
-                  HorizontalOptions="Fill"
-                  VerticalOptions="FillAndExpand"
-                  HeightRequest="300">
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding}" Aspect="AspectFill" />
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
-        
-        
-            <Label Text="🎉 Welcome!" 
-                   FontSize="32"
-                   TextColor="DarkGreen"
-                   HorizontalOptions="Center" />
-            
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" Spacing="25">
 
-            <Label Text="You are successfully logged in." 
-                   FontSize="18"
-                   TextColor="Black"
-                   HorizontalOptions="Center" />
+                <!-- Carousel -->
+                <Frame Padding="0" CornerRadius="12" HasShadow="True" BackgroundColor="White">
+                    <CarouselView x:Name="ImageCarousel"
+                                  ItemsSource="{Binding Images}"
+                                  Loop="True"
+                                  IsBounceEnabled="True"
+                                  HeightRequest="250">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding}" Aspect="AspectFill" />
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Frame>
 
-            <Button Text="Log Out" 
-                    Clicked="OnLogoutClicked"
-                    BackgroundColor="Red"
-                    TextColor="White"
-                    WidthRequest="120"
-                    HorizontalOptions="Center"/>
+                <!-- Welcome Message -->
+                <Label Text="🎉 Welcome!"
+                       FontSize="34"
+                       FontAttributes="Bold"
+                       TextColor="DarkGreen"
+                       HorizontalOptions="Center" />
 
-            <Button Text="Add Vehicle"
-                    Clicked="AddButton_Clicked"/>
-            
-            <Button Text="View Cars" 
-                    Clicked="ViewCarsButton_Clicked"
-                    WidthRequest="150"/>
-        </StackLayout>
+                <Label Text="You are successfully logged in."
+                       FontSize="18"
+                       TextColor="#333"
+                       HorizontalOptions="Center" />
+
+                <!-- Button Group (Side-by-side) -->
+                <Grid ColumnSpacing="15" Padding="0" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            Text="Add Vehicle"
+                            Clicked="AddButton_Clicked"
+                            BackgroundColor="#2C2C2E"
+                            TextColor="White"
+                            CornerRadius="10"
+                            BorderColor="#555"
+                            BorderWidth="1"
+                            Padding="12,8"
+                            WidthRequest="120"/>
+
+                    <Button Grid.Column="1"
+                            Text="View Cars"
+                            Clicked="ViewCarsButton_Clicked"
+                            BackgroundColor="#1C1C1E"
+                            TextColor="White"
+                            CornerRadius="10"
+                            BorderColor="#555"
+                            BorderWidth="1"
+                            Padding="12,8"
+                            WidthRequest="120"/>
+
+                    <Button Grid.Column="2"
+                            Text="Log Out"
+                            Clicked="OnLogoutClicked"
+                            BackgroundColor="#000000"
+                            TextColor="White"
+                            CornerRadius="10"
+                            BorderColor="#555"
+                            BorderWidth="1"
+                            Padding="12,8"
+                            WidthRequest="120"/>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

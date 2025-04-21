@@ -18,8 +18,8 @@ public partial class WelcomePage : ContentPage
         Images = new ObservableCollection<string>
         {
             "logo.png",
-            "dotnet_bot.png",
-            "app.jpg"
+            "cars1.jpg",
+            "cars2.jpg"
 
 
         };
