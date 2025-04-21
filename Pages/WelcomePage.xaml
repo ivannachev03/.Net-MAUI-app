@@ -40,6 +40,10 @@
 
             <Button Text="Add Vehicle"
                     Clicked="AddButton_Clicked"/>
+            
+            <Button Text="View Cars" 
+                    Clicked="ViewCarsButton_Clicked"
+                    WidthRequest="150"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -12,22 +12,19 @@ namespace PMU_APP.Models
 
     public class Car
     {
-        [PrimaryKey, AutoIncrement]
+
+
+
+
         public int Id { get; set; }
-
         public string Brand { get; set; }
-
         public string Model { get; set; }
-
-        public decimal Price { get; set; }
-
-        public string Information { get; set; }
-
-        public string ImagePath { get; set; }
-
-        public int UserId { get; set; }
+        public string Price { get; set; }
+        public string Info { get; set; }
+        public string ImagePath { get; set; } 
     }
 }
+
 
 
 
