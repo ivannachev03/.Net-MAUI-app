@@ -30,30 +30,7 @@ public partial class CarListPage : ContentPage
         CarsCollectionView.ItemsSource = cars;
     }
 
-    /*private async void OnCarSelected(object sender, SelectionChangedEventArgs e)
-    {
-        if (e.CurrentSelection.FirstOrDefault() is Car selectedCar)
-        {
-            await Navigation.PushAsync(new CarDetailPage(selectedCar));
-            CarsCollectionView.SelectedItem = null; // Reset selection
-        }
-    } */
-    /*private async void OnCarSelected(object sender, SelectionChangedEventArgs e)
-    {
-        if (e.CurrentSelection.FirstOrDefault() is Car selectedCar)
-        {
-            // Add slight delay to ensure button clicks are processed first
-            await Task.Delay(50);
-
-            // Only navigate if no button was clicked
-            if (!_buttonWasClicked)
-            {
-                await Navigation.PushAsync(new CarDetailPage(selectedCar));
-            }
-            _buttonWasClicked = false;
-            CarsCollectionView.SelectedItem = null;
-        }
-    } */
+    
     private async void OnCarSelected(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.FirstOrDefault() is Car selectedCar)

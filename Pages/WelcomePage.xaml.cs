@@ -8,8 +8,8 @@ namespace PMU_APP.Pages;
 
 public partial class WelcomePage : ContentPage
 {
-    private System.Timers.Timer _carouselTimer;
-    private int _currentIndex = 0;
+   // private System.Timers.Timer _carouselTimer;
+    //private int _currentIndex = 0;
 
     public ObservableCollection<string> Images { get; set; }
     public WelcomePage()
@@ -26,10 +26,10 @@ public partial class WelcomePage : ContentPage
 
         BindingContext = this;
 
-        StartCarouselTimer();
+        //StartCarouselTimer();
     }
 
-    private void StartCarouselTimer()
+    /*private void StartCarouselTimer()
     {
         _carouselTimer = new System.Timers.Timer(3000);
         _carouselTimer.Elapsed += OnTimerElapsed;
@@ -46,7 +46,7 @@ public partial class WelcomePage : ContentPage
             _currentIndex = (_currentIndex + 1) % Images.Count;
             ImageCarousel.Position = _currentIndex;
         });
-    }
+    } */
 	
 
     private async void OnLogoutClicked(object sender, EventArgs e)

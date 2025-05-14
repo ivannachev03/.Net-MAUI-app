@@ -57,7 +57,7 @@ public class CarDatabaseService
     {
         await Initialize();
 
-        // Debug output to verify the car object
+        
         Debug.WriteLine($"Deleting car ID: {car?.Id}, Brand: {car?.Brand}");
 
         if (car == null || car.Id <= 0)
@@ -65,6 +65,6 @@ public class CarDatabaseService
             throw new ArgumentException("Car must have a valid ID");
         }
 
-        return await _database.DeleteAsync<Car>(car.Id); // Delete by ID specifically
+        return await _database.DeleteAsync<Car>(car.Id);
     }
 }

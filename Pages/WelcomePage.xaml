@@ -10,7 +10,7 @@
         <ScrollView>
             <StackLayout VerticalOptions="Center" Spacing="25">
 
-                <!-- Carousel -->
+                <!-- Carousel 
                 <Frame Padding="0" CornerRadius="12" HasShadow="True" BackgroundColor="White">
                     <CarouselView x:Name="ImageCarousel"
                                   ItemsSource="{Binding Images}"
@@ -23,6 +23,11 @@
                             </DataTemplate>
                         </CarouselView.ItemTemplate>
                     </CarouselView>
+                </Frame> -->
+                <Frame Padding="0" CornerRadius="12" HasShadow="True" BackgroundColor="White">
+                    <Image Source="logo2.png"
+                           Aspect="AspectFit"
+                           HeightRequest="250" />
                 </Frame>
 
                 <!-- Welcome Message -->
